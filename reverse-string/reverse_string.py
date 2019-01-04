@@ -1,15 +1,10 @@
-def reverse(inputString):
-    reversedString = ""
-    for eachCharacter in inputString:
-        reversedString = eachCharacter + reversedString
-    return reversedString
+def reverse(input=''):
+    str =""
+    for i in input:
+     str = i + str
+    return str
 
-
-#text = input("enter word: ")
-#print("original: ",end="")
-#print(text)
-#print("reversed: ",end="")
-#print(reverse(text))
-
-
+# shortcut
+#def reverse(input=''):
+   # return str(input)[::-1]
 

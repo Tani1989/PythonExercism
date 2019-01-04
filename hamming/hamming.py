@@ -20,3 +20,7 @@ def distance(strand_a, strand_b):
     return calculate
 
 print(distance("abcde", "atywi"))
+
+# short
+def distance(strand1, strand2):
+    return sum(i != j for i, j in zip(strand1, strand2))
