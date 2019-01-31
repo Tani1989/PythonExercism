@@ -1,3 +1,5 @@
+
+#dictionary
 def score(word):
     lower_word = word.lower()
     mydict = {
@@ -36,3 +38,24 @@ def score(word):
                 sum = sum + y
     return sum
 
+# other way
+def transform(data):
+    return {letter.lower(): score
+            for score in data
+            for letter in data[score]}
+
+score_to_letter = {
+    1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
+    2: ['D', 'G'],
+    3: ['B', 'C', 'M', 'P'],
+    4: ['F', 'H', 'V', 'W', 'Y'],
+    5: ['K'],
+    8: ['J', 'X'],
+    10: ['Q', 'Z']}
+
+letter_to_score = transform(score_to_letter)
+
+
+def score(word):
+    return sum([letter_to_score.get(letter, 0)
+                for letter in word.lower()])
